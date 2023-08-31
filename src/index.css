@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;200;300;400;500&family=Quicksand:wght@300;400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*::-webkit-scrollbar{
+  width: 0;
+}
+*,*::before,*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: .2s all linear;
+  scroll-behavior: smooth;
+}
+.transition_cubic{
+  transition: 1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)
+}
+/* cubic-bezier(0.25, 0.8, 0.25, 1); */
+.text{
+  font-size: 30px;
+  background: linear-gradient(90deg, #220979 0%, #F76B1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.text2{
+  font-size: 35px;
+  background: linear-gradient(90deg, #2788ff 0%, #f71cd6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: lighter;
+  text-decoration: underline;
+}
+.text3{
+  font-size: 50px;
+  background: linear-gradient(90deg, #2788ff 0%, #f71cd6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.text4{
+    font-size: 60px;
+  background: linear-gradient(90deg, #220979 0%, #F76B1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: lighter;
+    text-decoration: underline;
+}
+.text5{
+    font-size: 60px;
+  background: linear-gradient(90deg, #220979 0%, #F76B1C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+    text-decoration: underline;
+}
+.text6{
+  font-size: 120px;
+  background: linear-gradient(90deg, #2788ff 0%, #f71cd6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.button:hover .arrow{
+  transform: scale(1.2);
+}
+.holder_cart:hover .icons_cart{
+  color: white;
+}
+.priceAnimate{
+  width: 100px;
+  height: 100px;
+  animation: animate 2s ease-in-out infinite;
+  transition: all 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 20px 5px 5px rgba(0,0,0,.2);
+}
+.priceAnimate2{
+  width: 200px;
+  height: 30px;
+  animation: animate 2s ease-in-out infinite;
+  transition: all 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 20px 5px 5px rgba(0,0,0,.4);
+}
+@keyframes animate{
+  0%{
+    border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
+    transform: scale(1.2);
+    font-weight: bolder;
+  }
+  50%{
+    border-radius: 30% 60% 70% 40%/ 50% 30% 70% 40%;
+    font-weight: 300;
+    transform: scale(1);
+  }
+  100%{
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    font-weight: bolder;
+    transform: scale(1.2);
+  }
+}
+.first div:nth-of-type(1){
+  margin-top: 5px;
+}
+.slide:nth-child(2n + 1){
+  flex-direction: row-reverse;
+}
