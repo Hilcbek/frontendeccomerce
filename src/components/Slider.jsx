@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
-import { AddProduct } from '../../@Redux/ProductReducer'
+import { AddProduct } from '../../@Redux/product'
 import {Navigate, useNavigate} from 'react-router-dom'
 const Slider = ({data,style}) => {
     let [quantity,setQuantity] = useState(1)

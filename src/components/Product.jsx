@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {LiaCartPlusSolid} from 'react-icons/lia'
 import {CiSearch} from 'react-icons/ci'
 import {Link, useNavigate} from 'react-router-dom'
-import { AddProduct } from '../../@Redux/ProductReducer'
+import { AddProduct } from '../../@Redux/product'
 import { useDispatch, useSelector } from 'react-redux'
 const Product = ({data,gap,showCart}) => {
     let [src,setSrc] = useState(null)

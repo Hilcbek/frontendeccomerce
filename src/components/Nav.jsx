@@ -9,7 +9,7 @@ import {IoCloseOutline} from 'react-icons/io5'
 import { useDispatch, useSelector } from 'react-redux'
 import { Router } from '../../utils/Axios'
 import { LOGOUT } from '../../@Redux/userReducer'
-import { CloseCart, OpenCart } from '../../@Redux/ProductReducer'
+import { CloseCart, OpenCart } from '../../@Redux/product.js'
 const Nav = () => {
   let [scroll,setScroll] = useState(false)
   let Scroller = () => window.scrollY >= 100 ? setScroll(true) : setScroll(false)

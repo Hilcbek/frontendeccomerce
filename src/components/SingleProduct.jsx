@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Router } from '../../utils/Axios'
 import ClipLoader from 'react-spinners/ClipLoader'
 import ReactImageMagnify from 'react-image-magnify';
-import { AddProduct } from '../../@Redux/ProductReducer'
+import { AddProduct } from '../../@Redux/product'
 import { useDispatch, useSelector } from 'react-redux'
 const SingleProduct = () => {
     let location = useLocation().pathname.split("/")[2]

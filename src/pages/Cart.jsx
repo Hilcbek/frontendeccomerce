@@ -4,7 +4,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import {GrClose} from 'react-icons/gr'
 import { FaAmazonPay } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { Add, CloseCart, DeleteProduct, Reset, Subtructe } from '../../@Redux/ProductReducer'
+import { Add, CloseCart, DeleteProduct, Reset, Subtructe } from '../../@Redux/product'
 import { useNavigate } from 'react-router-dom'
 import { Router } from '../../utils/Axios';
 const Cart = () => {
