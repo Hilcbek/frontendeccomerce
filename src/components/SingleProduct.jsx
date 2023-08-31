@@ -42,11 +42,7 @@ const SingleProduct = () => {
         setSrc(e.target.getAttribute("src"))
     } 
     let AddToCart = () => {
-        if(username?.length > 0 ){
-            dispatch(AddProduct({...product, quantity,setSelectdSize,setSelectedColor})) 
-        }else{
-            navigate('/login')
-        }
+        username.length !== 0 ? dispatch(AddProduct({...product, quantity,setSelectdSize,setSelectedColor})) : navigate('/login')
     }
   return (
     <div className='flex items-center justify-center w-full min-h-[70vh]'>
