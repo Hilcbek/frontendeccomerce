@@ -109,6 +109,7 @@ const Cart = () => {
              <button disabled={!username || !Total} className='p-2 xs:my-3 lg:my-5 tracking-wider relative xs:w-11/12 xs:mx-auto flex items-center justify-center overflow-hidden group bg-[#2196f3] text-white px-2 transition_cubic'><FaAmazonPay className='mr-1 transition_cubic rotate-[360deg] group-hover:rotate-0 group-hover:left-28' /><p className='text-sm'>Checout</p></button>
         </StripeCheckout>
         <button onClick={Resetter} className='p-2 hover:bg-red-600 hover:text-white xs:my-3 lg:my-5 tracking-wider relative xs:w-11/12 xs:mx-auto border-solid border-red-600 border-[1px] text-sm flex items-center justify-center overflow-hidden group text-red-600 px-2'>Reset</button>
+        <p className='w-full text-red-800 font-bold font-Roboto text-xl text-center'>Use this demo Card Number for Security <p>4242 4242 4242 4242</p></p>
     </div>
   )
 }
