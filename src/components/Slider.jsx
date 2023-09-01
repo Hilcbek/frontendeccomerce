@@ -20,7 +20,11 @@ const Slider = ({data,style}) => {
     }
     let dispatch = useDispatch()
     let AddToCart = () => {
-        username.length !== 0 ? dispatch(AddProduct({...data, quantity,setSelectdSize,setSelectedColor})) : navigate('/login')
+        if(username !== null){
+            dispatch(AddProduct({...data, quantity,setSelectdSize,setSelectedColor}))
+        }else{
+            navigate('/login')
+        }
     }
   return (
     <div className='flex transition_cubic w-full lg:slide lg:p-4 items-start lg:flex-row xs:flex-col justify-start font-Roboto' style={{ transform : `translateX(${style * -100}vw)`}}>

@@ -3,7 +3,7 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Router } from '../../utils/Axios'
 import ClipLoader from 'react-spinners/ClipLoader'
-import ReactImageMagnify from 'react-image-magnify';
+// import ReactImageMagnify from 'react-image-magnify';
 import { AddProduct } from '../../@Redux/product'
 import { useDispatch, useSelector } from 'react-redux'
 const SingleProduct = () => {
@@ -37,12 +37,13 @@ const SingleProduct = () => {
         let navigate = useNavigate()
     let AllImages = document.querySelectorAll('.images')
     let [src,setSrc] = useState(null)
-    let {username} = useSelector((state) => state.product)
+    let {username} = useSelector((state) => state.user)
     let handleHover = (e) => {
         setSrc(e.target.getAttribute("src"))
     } 
     let AddToCart = () => {
-        username.length !== 0 ? dispatch(AddProduct({...product, quantity,setSelectdSize,setSelectedColor})) : navigate('/login')
+         dispatch(AddProduct({...product, quantity,setSelectdSize,setSelectedColor}))
+         dispatch(OpenCart({}))
     }
   return (
     <div className='flex items-center justify-center w-full min-h-[70vh]'>
@@ -60,19 +61,7 @@ const SingleProduct = () => {
             </div>
             <div className='flex items-start w-full justify-start lg:flex-row xs:flex-col'>
                 <div className='w-full bg-[#ebeef0] mr-4'>
-                    {/* <img className='w-full h-full object-cover' src={src ? src  : product?.img?.[0]} alt="" /> */}
-                    <ReactImageMagnify {...{
-                        smallImage: {
-                            alt: 'Wristwatch by Ted Baker London',
-                            isFluidWidth: true,
-                            src: src ? src  : product?.img?.[0]
-                        },
-                        largeImage: {
-                            src: src ? src  : product?.img?.[0],
-                            width: 700,
-                            height: 700
-                        }
-                    }} className='z-[999999999] object-cover' />
+                    <img className='w-full h-full object-cover' src={src ? src  : product?.img?.[0]} alt="" />
                 </div>
                 <div className='flex items-start w-full justify-start flex-col lg:ml-4'>
                     <h1 className='my-4 font-semibold text-2xl font-Roboto'>{product?.title}</h1>

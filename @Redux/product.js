@@ -6,7 +6,6 @@ let productSlice = createSlice({
         products : [],
         quantity : 0,
         Total : 0,
-        cart : false
     },
     reducers : {
         AddProduct : (state,action) => {
@@ -21,24 +20,17 @@ let productSlice = createSlice({
                     state.Total += action.payload.price * action.payload.quantity
                 }
            }
-            state.cart = true
-        },
-        CloseCart : (state,action) => {
-            state.cart = false
-        },
-        OpenCart : (state,action) => {
-            state.cart = true
         },
         DeleteProduct : (state,action) => {
             let id = action.payload.id
             let price = state.products.find((pro) => pro._id === id)
+            state.quantity -= 1
             state.products = state.products.filter((pro) => pro._id !== id)
             state.Total = state.Total - price.price * price.quantity
         },
         Reset : (state,action) => {
             state.products = []
             state.Total = 0
-            state.cart = false
             state.quantity = 0
         },
         Subtructe : (state,action) => {
@@ -59,5 +51,5 @@ let productSlice = createSlice({
         }
     }
 })
-export let { AddProduct, CloseCart, OpenCart, DeleteProduct,Reset,InnerChange,Subtructe, Add } = productSlice.actions
+export let { AddProduct, DeleteProduct,Reset,InnerChange,Subtructe, Add } = productSlice.actions
 export default productSlice.reducer

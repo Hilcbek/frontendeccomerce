@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux"
 import ListOfCatagories from "./components/ListOfCatagories"
+import Cart from "./pages/Cart"
 function App() {
   let {profile,reload} = useSelector((state) => state.user)
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/register" element={(profile && reload) ? <Navigate to={'/'} /> : <Register />} />
           <Route path="/login" element={(profile && reload )  ? <Navigate to={'/'} /> : <Login />} />
           <Route path="/login" element={(profile && reload )  ? <Navigate to={'/'} /> : <Login />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product/RelatedProducts/:cat" element={<ListOfCatagories />} />
         </Routes>
         {(profile && reload) && <Footer />}

@@ -11,3 +11,4 @@ export let UploadImage = async (url) => {
     let res = await axios.post('https://api.cloudinary.com/v1_1/du9pkirsy/image/upload',form)
     return res.data.secure_url
 }
+//https://eccomerce-backend-9udd.onrender.com/api

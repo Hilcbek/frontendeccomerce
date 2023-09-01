@@ -13,7 +13,6 @@ const Home = () => {
   let [loading, setLoading] = useState(false);
     let [color, setColor] = useState("#000");
     let [products,setProducts] = useState([])
-    let { cart } = useSelector((state) => state.product)
     let { username, reload } = useSelector((state) => state.user)
     useEffect(() => {
         setLoading(true)
@@ -42,7 +41,6 @@ const Home = () => {
         <Catagories />
         <Products />
         <NewSletter />
-        {(username && cart && reload) && <Cart />}
     </div>
   )
 }

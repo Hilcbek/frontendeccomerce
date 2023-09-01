@@ -22,6 +22,9 @@ let userSlice = createSlice({
             localStorage.setItem("username",JSON.stringify(action.payload.username))
         },
         LOGOUT : (state,action) => {
+            state.username = null
+            state.profile = null
+            state.isAdmin = null
             localStorage.clear()
             state.reload = false
         }

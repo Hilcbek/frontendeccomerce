@@ -47,7 +47,7 @@ const Product = ({data,gap,showCart}) => {
                 </div>
             </div>
             <div className='font-Roboto shadow-sm shadow-black/20 py-1 font-light text-xs text-black/80'>
-                <h1 className='my-1'>{data.title}</h1>
+                <h1 className='my-1 font-semibold'>{data.title}</h1>
                 <p className='my-1'>T-shirt</p>
                 <p className='my-1'>3 colors</p>
             </div>
