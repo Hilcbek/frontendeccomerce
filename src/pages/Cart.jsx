@@ -99,7 +99,7 @@ const Cart = () => {
         <StripeCheckout 
             name={username}
             description={`Your total amount is ${Total}`}
-            image='../../public/images/logo.png'
+            image='https://assets.iocea.com/assets/Product%20Logos/Logo1-01.png'
             billingAddress
             shippingAddress
             amount={Total}
