@@ -36,7 +36,7 @@ const Product = ({data,gap,showCart}) => {
             <p className='absolute bottom-0 text-xs bg-white w-10 left-1 flex items-center justify-center font-Quicksand'>${data.price}</p>
         </div>
         <div className='w-full'>
-            <div className='hidden transition_cubic group-hover:grid grid-cols-4 gap-[1px] w-full'>
+            <div className='lg:hidden transition_cubic xs:grid lg:group-hover:grid grid-cols-4 gap-[1px] w-full'>
                 {
                     data.img.map((i,idx) => (
                         <div key={idx} className='xs:w-[100%] z-[999] border-solid hover:border-[#2196f3] border-[1px] lg:w-auto m-[1px]'>
