@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import {MdDelete} from 'react-icons/md'
 import StripeCheckout from 'react-stripe-checkout';
-import {GrClose} from 'react-icons/gr'
 import { FaAmazonPay } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { Add, DeleteProduct, Reset, Subtructe } from '../../@Redux/product'
 import { Link, useNavigate } from 'react-router-dom'
 import { Router } from '../../utils/Axios';
 import { BsArrowLeft } from 'react-icons/bs';
+import { toast } from 'react-toastify';
 const Cart = () => {
     let {Total} = useSelector((state) => state.product)
     let {username} = useSelector((state) => state.user)
@@ -37,10 +37,6 @@ const Cart = () => {
     let [show,setShow] =  useState(false)
     let { products } = useSelector((state) => state.product)
     let dispatch = useDispatch()
-    // let [quantity,setQuantity] = useState(1)
-    let Close = () => {
-        dispatch(CloseCart({}))
-    }
     let handleQuantity = (sign,id) => {
         if(sign === "plus"){ 
             let result = Array.from(products).find((pro) => pro._id === id)
@@ -54,9 +50,11 @@ const Cart = () => {
     }
     let SendDelete = (id) => {
         dispatch(DeleteProduct({ id : id }))
+        toast.info('Product remove from your Cart!')
     }
     let Resetter = () => {
         dispatch(Reset({}))
+         toast.info('Your cart is cleared!')
     }
   return (
     <div className='w-11/12 mx-auto'>

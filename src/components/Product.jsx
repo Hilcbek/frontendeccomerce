@@ -16,13 +16,13 @@ const Product = ({data,gap,showCart}) => {
     let AddToCart = () => {
         if(username?.length > 0 ){
             dispatch(AddProduct({...data, quantity : 1}))
-            toast.success('Product added to Cart!')
+            toast.info('Product added to Cart!')
          }else{
             navigate('/login')
          }
     }
   return (
-    <div className={`${gap ? 'xs:w-full xs:h-full lg:w-[276px]' : 'xs:w-full xs:h-full lg:w-[288px]'} shadow-xs shadow-black mt-10 bg-white relative overflow-hidden group cursor-pointer`}>
+    <div className={`${gap ? 'xs:w-full xs:h-full lg:w-[276px]' : 'xs:w-full xs:h-full lg:w-[288px]'} shadow-xs shadow-[#dcd9d9] mt-1 bg-white relative overflow-hidden group cursor-pointer`}>
         <div className='w-full flex items-end justify-start flex-col absolute top-2 -right-9 h-full transition_cubic group-hover:right-2 z-[999]'>
             {showCart && <li onClick={AddToCart} className='w-10 h-10 flex items-center my-[2px] hover:bg-black justify-center hover:bg-black/10 rounded-full cursor-pointer'>
                 <LiaCartPlusSolid className={'text-2xl'} />

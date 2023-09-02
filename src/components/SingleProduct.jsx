@@ -44,7 +44,7 @@ const SingleProduct = () => {
     } 
     let AddToCart = () => {
          dispatch(AddProduct({...product, quantity,setSelectdSize,setSelectedColor}))
-         toast.success('Product added to Cart!')
+         toast.info('Product added to Cart!')
          dispatch(OpenCart({}))
     }
   return (

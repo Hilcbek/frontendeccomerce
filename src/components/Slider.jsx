@@ -23,7 +23,7 @@ const Slider = ({data,style}) => {
     let AddToCart = () => {
         if(username !== null){
             dispatch(AddProduct({...data, quantity,setSelectdSize,setSelectedColor}))
-            toast.success('Product added to Cart!')
+            toast.info('Product added to Cart!')
         }else{
             navigate('/login')
         }
