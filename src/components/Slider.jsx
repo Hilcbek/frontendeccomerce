@@ -3,6 +3,7 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { AddProduct } from '../../@Redux/product'
 import {Navigate, useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
 const Slider = ({data,style}) => {
     let [quantity,setQuantity] = useState(1)
     let setSelectedColor = [data.color[0]]
@@ -22,6 +23,7 @@ const Slider = ({data,style}) => {
     let AddToCart = () => {
         if(username !== null){
             dispatch(AddProduct({...data, quantity,setSelectdSize,setSelectedColor}))
+            toast.success('Product added to Cart!')
         }else{
             navigate('/login')
         }

@@ -3,6 +3,7 @@ import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Router } from '../../utils/Axios'
 import ClipLoader from 'react-spinners/ClipLoader'
+import { toast } from 'react-toastify';
 // import ReactImageMagnify from 'react-image-magnify';
 import { AddProduct } from '../../@Redux/product'
 import { useDispatch, useSelector } from 'react-redux'
@@ -43,6 +44,7 @@ const SingleProduct = () => {
     } 
     let AddToCart = () => {
          dispatch(AddProduct({...product, quantity,setSelectdSize,setSelectedColor}))
+         toast.success('Product added to Cart!')
          dispatch(OpenCart({}))
     }
   return (
