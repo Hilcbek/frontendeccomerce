@@ -70,14 +70,14 @@
 .priceAnimate{
   width: 100px;
   height: 100px;
-  animation: animate 2s ease-in-out infinite;
+  animation: animate 2s linear infinite;
   transition: all 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   box-shadow: 0 20px 5px 5px rgba(0,0,0,.1);
 }
 .priceAnimate2{
   width: 100px;
   height: 30px;
-  animation: animate 2s ease-in-out infinite;
+  animation: animate 2s linear infinite;
   transition: all 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   box-shadow: 0 20px 5px 5px rgba(0,0,0,.1);
 }
