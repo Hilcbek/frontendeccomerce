@@ -4,6 +4,7 @@ import {CiSearch} from 'react-icons/ci'
 import {Link, useNavigate} from 'react-router-dom'
 import { AddProduct } from '../../@Redux/product'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify';
 const Product = ({data,gap,showCart}) => {
     let [src,setSrc] = useState(null)
     let dispatch = useDispatch()
@@ -15,6 +16,7 @@ const Product = ({data,gap,showCart}) => {
     let AddToCart = () => {
         if(username?.length > 0 ){
             dispatch(AddProduct({...data, quantity : 1}))
+            toast.success('Product added to Cart!')
          }else{
             navigate('/login')
          }
