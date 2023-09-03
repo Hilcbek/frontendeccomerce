@@ -100,7 +100,7 @@ const Cart = () => {
             image='https://assets.iocea.com/assets/Product%20Logos/Logo1-01.png'
             billingAddress
             shippingAddress
-            amount={Total * 100}
+            amount={Number(Total * 100).toFixed(2)}
             token={onToken}
             stripeKey={import.meta.env.VITE_STRIPE_PAYMENT_PUBLIC_API}
             >
