@@ -96,11 +96,11 @@ const Cart = () => {
         </div>
         <StripeCheckout 
             name={username}
-            description={`Your total amount is ${Total}`}
+            description={`Your total amount is ${Number(Total).toFixed(2)}`}
             image='https://assets.iocea.com/assets/Product%20Logos/Logo1-01.png'
             billingAddress
             shippingAddress
-            amount={Total}
+            amount={Total * 100}
             token={onToken}
             stripeKey={import.meta.env.VITE_STRIPE_PAYMENT_PUBLIC_API}
             >
