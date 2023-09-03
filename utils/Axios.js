@@ -1,6 +1,6 @@
 import axios from 'axios'
 export let Router = axios.create({
-    baseURL : 'http://localhost:5000/api',
+    baseURL : 'https://eccomerce-backend-9udd.onrender.com/api',
     withCredentials : true
 })
 export let UploadImage = async (url) => {
