@@ -25,8 +25,7 @@ function App() {
           <Route path="/pay" element={(profile || reload) ? <Payment /> : <Navigate to={'/login'} />} />
           <Route path="/register" element={(profile && reload) ? <Navigate to={'/'} /> : <Register />} />
           <Route path="/login" element={(profile && reload )  ? <Navigate to={'/'} /> : <Login />} />
-          <Route path="/login" element={(profile && reload )  ? <Navigate to={'/'} /> : <Login />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={(profile || reload) ? <Cart /> : <Navigate to={'/login'} />} />
           <Route path="/product/RelatedProducts/:cat" element={<ListOfCatagories />} />
         </Routes>
         {(profile && reload) && <Footer />}

@@ -9,6 +9,10 @@ import {IoCloseOutline} from 'react-icons/io5'
 import { useDispatch, useSelector } from 'react-redux'
 import { Router } from '../../utils/Axios'
 import { LOGOUT } from '../../@Redux/userReducer'
+import { Reset } from '../../@Redux/product'
+window.onload = () => {
+  // let res = await axios
+}
 const Nav = () => {
   let [scroll,setScroll] = useState(false)
   let Scroller = () => window.scrollY >= 100 ? setScroll(true) : setScroll(false)
@@ -21,7 +25,7 @@ const Nav = () => {
   let Logout = () => {
     Router.post('/auth/logout');
     navigate('/')
-    dispatch(LOGOUT({}))
+    dispatch(LOGOUT({}),Reset({}))
   }
   let {quantity} = useSelector((state) => state.product)
   return (
