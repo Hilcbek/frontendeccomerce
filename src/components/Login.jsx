@@ -23,11 +23,12 @@ const Login = () => {
                 dispatch(LOGIN({ id : res.data.data._id, isAdmin : res.data.data.isAdmin, profile : res.data.data.profile, reload : true, username : res.data.data.username }))
                 setData({})
                 navigate('/')
+                setData({});
             }
         } catch (error) {
             toast.error(error.response.data.error)
-            setLoading(false)
-            setData({})
+        }finally{
+            setLoading(false);
         }
     }
   return (
